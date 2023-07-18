@@ -5,13 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="./css/detail.css">
 </head>
+
 <body>
-	${dto.bno }
-	${dto.btitle }
-	${dto.bcontent }
-	${dto.bwrite }
-	${dto.bdate }
-	${dto.blike }
+<%@ include file = "menu.jsp" %>
+<h1>상세보기</h1>
+	<div class= "detail-content">
+		<div class="title">${dto.bno }.  ${dto.btitle }</div>
+		<div class="name">${dto.bwrite }</div>
+		<div class="content">${dto.bcontent }</div>
+		<div class="under-bar">
+			<div class="date">${dto.bdate }</div>
+			<div class="like">${dto.blike }</div>
+		</div>
+			<div class="ip">아직없음</div>
+	</div>
 </body>
 </html>

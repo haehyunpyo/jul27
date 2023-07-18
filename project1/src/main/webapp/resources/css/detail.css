@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.detail-content{
+	margin: 0 auto;
+	width: 800px;
+	height: auto;
+	background-color: #FDF5E6;
+	padding: 10px;
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+.title{
+	width: 100%;
+	height: 50px;
+	line-height:50px;
+	font-size: large;
+	background-color: #FDCD8C;
+	border-radius: 20px;
+	padding: 0 20px 0 20px;
+	box-sizing:border-box;
+}
+.under-bar{
+	width: 100%;
+	border: 1px solid #D7A35D;
+	background-color: #FFEFD5;
+	height: 80px;
+	padding: 20px;
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+.name, .like{
+	text-align: right;
+	font-weight: bold;
+	padding-top: 10px 10px 0 0;
+}
+
+.like, .date{
+	width: 50%;
+	height:20px;
+	float: left;
+}
+
+ .ip{
+	text-align: center;
+	padding: 10px 0 10px 0;
+	font-weight: lighter;
+}
+
+.content{
+	width:100%;
+	min-height:500px; 
+	height: auto;
+	padding: 20px;
+	box-sizing:border-box;
+}

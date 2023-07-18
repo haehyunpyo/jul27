@@ -8,10 +8,8 @@
 <link rel="stylesheet" href="./css/board.css">
 </head>
 <body>
+<%@ include file = "menu.jsp" %>
 	<h1>보드</h1>
-	<img alt="" src="./img/pepe.jpg" height=50px>
-	<a href="./">index로 가기</a>
-	
 	<table>
 		<tr>
 			<th>번호</th>
@@ -32,6 +30,8 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<button onclick="location.href='./write'">글쓰기</button>
+	
 	
 </body>
 </html>
