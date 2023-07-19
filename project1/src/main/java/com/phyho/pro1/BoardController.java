@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BoardController {
@@ -16,6 +17,10 @@ public class BoardController {
 	// Autowired말고 Resource로 연결
 	@Resource(name="boardService")
 	private BoardService boardService;
+	
+	@Autowired
+	private Util util; // 컴포넌트 Util과 연결했습니다.
+
 	
 	@GetMapping("/board")
 	public String board(Model model) {
@@ -34,6 +39,7 @@ public class BoardController {
 		//System.out.println("bno : "+ bno);
 		BoardDTO dto = boardService.detail(bno);
 		model.addAttribute("dto", dto);
+		System.out.println(util.getIp() + bno);
 		
 		return "detail";
 	}
@@ -50,6 +56,8 @@ public class BoardController {
 //		System.out.println(request.getParameter("title"));
 //		System.out.println(request.getParameter("content"));
 //		System.out.println("================");
+		
+		
 		BoardDTO dto = new BoardDTO();
 		dto.setBtitle(request.getParameter("title"));
 		dto.setBcontent(request.getParameter("content"));
@@ -58,8 +66,23 @@ public class BoardController {
 		// Service -> DAO -> mybatis -> DB로 보내서 저장하기
 		boardService.write(dto);
 		
-		
+
 		return "redirect:board"; // 다시 컨트롤러 지나가기, GET방식으로 갑니다.
+	}
+	
+	@GetMapping("/delete")
+					//   HttpServletRequest의 getParameter();
+	public String delete(@RequestParam(value = "bno", required = false, defaultValue = "103") int bno) {	
+		// System.out.println("bno : " + bno);
+		//dto
+		BoardDTO dto = new BoardDTO();
+		dto.setBno(bno);
+		// dto.setBwrite(null) 사용자정보
+		// 추후 로그인을 하면 사용자의 정보도 담아서 보냅니다.
+		
+		boardService.delete(dto);
+		
+		return "redirect:board";	// 삭제를 완료한 후에 다시 보드로 갑니다.
 	}
 	
 }

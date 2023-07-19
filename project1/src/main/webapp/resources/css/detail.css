@@ -32,6 +32,9 @@
 	font-weight: bold;
 	padding-top: 10px 10px 0 0;
 }
+.name{
+	margin: 10px;
+}
 
 .like, .date{
 	width: 50%;
@@ -51,4 +54,8 @@
 	height: auto;
 	padding: 20px;
 	box-sizing:border-box;
+}
+.upNde{
+	margin: 0 auto;
+	float: right;
 }

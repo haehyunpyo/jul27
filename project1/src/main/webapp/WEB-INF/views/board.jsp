@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>PYO'S</title>
 <link rel="stylesheet" href="./css/board.css">
 </head>
 <body>
