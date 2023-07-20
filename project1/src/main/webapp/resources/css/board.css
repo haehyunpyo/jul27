@@ -9,7 +9,7 @@ table{
 
 th{
 	height: 50px;
-	background-color: gray;
+	background-color: #FFDAB9;
 }
 
 td{
@@ -32,6 +32,5 @@ td{
 tr:hover {
 	background-color: gray;
 }
-
 
 

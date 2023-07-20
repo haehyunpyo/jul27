@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.loginBox {
+	margin: 0 auto;
+	width: 200px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+.IDbox, .PWbox, .butbox {
+	margin: 15px;
+}
+
+.butbox {
+	text-align: center;
+	padding: 30px;
+}
+.loginbtn {
+	width: 50%;
+}
+
+h1{
+	text-align: center;
+}

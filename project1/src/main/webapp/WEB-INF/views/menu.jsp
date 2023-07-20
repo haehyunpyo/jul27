@@ -14,6 +14,8 @@
 				<img class="qimg" src="./img/ask.png">문의사항<img class="qimg" src="./img/ask.png"></li>
 			<li onclick="link('notice')">
 				<img class="nimg" src="./img/notice.png">공지</li>
+			<li onclick="link('login')">
+				<img class="limg" src="./img/login.png"></li>
 			
 		</ul>
 	</nav>

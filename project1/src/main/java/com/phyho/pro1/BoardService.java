@@ -26,7 +26,7 @@ public class BoardService {
 		return boardDAO.boardList();
 	}
 
-	public BoardDTO detail(String bno) {
+	public BoardDTO detail(int bno) {
 		BoardDTO dto = boardDAO.detail(bno);
 
 		// 검사 : .이 없거나, null이면 실행하지 않게 해주세요.
@@ -72,6 +72,10 @@ public class BoardService {
 
 	public void delete(BoardDTO dto) {
 		boardDAO.delete(dto);
+	}
+
+	public void edit(BoardDTO dto) {
+		boardDAO.edit(dto);
 	}
 }
  
