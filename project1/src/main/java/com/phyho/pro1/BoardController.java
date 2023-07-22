@@ -113,13 +113,6 @@ public class BoardController {
 		return "redirect:detail?bno="+dto.getBno();	// 보드로 이동하게 해주세요
 	}
 	
-	
-	@GetMapping("/login")
-	public String login() {
-		return null;
-	}
-	
-	
 }
 
  

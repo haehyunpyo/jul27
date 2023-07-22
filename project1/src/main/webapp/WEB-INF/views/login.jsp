@@ -12,14 +12,20 @@
 
 	<div class="loginBox">
 		<h1>로그인</h1>
-		<div class = "IDbox">
-			<input type="text" name="ID" placeholder="아이디">	
-		</div>	
-		<div class = "PWbox">
-			<input type="password" name="PW" placeholder="패스워드">
-		<div class = "butbox">
-			<button class ="loginbtn" type="submit">log-in</button>
-		</div>
+		
+		<form action="./login" method="post">
+			<div class = "IDbox">
+				<input type="text" name="ID" placeholder="아이디">	
+			</div>	
+			<div class = "PWbox">
+				<input type="password" name="PW" placeholder="패스워드">
+			</div>
+	
+			<div class = "butbox">
+				<button class ="loginbtn" type="submit">log-in</button>
+			</div>
+		</form>
+		
 	</div>
 	
 </body>
