@@ -16,11 +16,19 @@
 
 }
 
-.btn2{
-	margin: 0;	padding: 0;
-	width: 100%;
-	height: 500px;	
-}
-.push{
+.btn2Box{
+	margin: 20px;
 	text-align: center;
 }
+.btn2{
+	border-radius: 30px;
+	width: 70px;
+    height: 30px;
+    background-color: #FFDAB9;
+    transition-duration: 0.4s;
+}
+.btn2:hover {
+  background-color: black;
+  color: white;
+}
+

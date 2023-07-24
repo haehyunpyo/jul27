@@ -25,8 +25,8 @@
 		<form action="./write" method="post">
 			<input type="text" name="title">
 			<textarea id="summernote" name="content"></textarea>
-			<div class="push"> 
-				<button name="btn2" type="submit">글쓰기</button>
+			<div class="btn2Box"> 
+				<button class="btn2" name="btn2" type="submit">글쓰기</button>
 			</div>
 		</form>
 		<!-- 	type="submit" => 제출버튼, 폼데이터로 데이터 전송-->
