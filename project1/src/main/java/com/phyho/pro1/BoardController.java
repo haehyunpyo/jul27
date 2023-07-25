@@ -70,10 +70,11 @@ public class BoardController {
 	@PostMapping("/write")
 	public String write2(HttpServletRequest request){	// 메소드명에 2를 넣어주세요.
 
+		BoardDTO dto = new BoardDTO();
 		HttpSession session = request.getSession();
+
 		if(session.getAttribute("mid") != null) {
 			// 로그인 했습니다. = 아래 로직을 여기로 가져오세요.
-			BoardDTO dto = new BoardDTO();
 			dto.setBtitle(request.getParameter("title"));
 			dto.setBcontent(request.getParameter("content"));
 			
@@ -82,51 +83,64 @@ public class BoardController {
 			
 			// Service -> DAO -> mybatis -> DB로 보내서 저장하기
 			boardService.write(dto);
-			
-			return "redirect:board"; // 다시 컨트롤러 지나가기, GET방식으로 갑니다.
-			
 		} else {
 			// 로그인 안 했어요. = 로그인 하세요.
 			return "redirect:/login";
 		}
-		
+		return "redirect:/board"; // 다시 컨트롤러 지나가기, GET방식으로 갑니다.
 	}
 	
+	
 	@GetMapping("/delete")
-					//   HttpServletRequest의 getParameter();
-	public String delete(@RequestParam(value = "bno", required = false, defaultValue = "0") int bno) {	
-		// System.out.println("bno : " + bno);
-		//dto
+	public String delete(@RequestParam(value = "bno", required = false, defaultValue = "0") int bno, HttpSession session) {	
+		// 로그인 여부 확인해주세요.
+		// System.out.println("mid : " + session.getAttribute("mid"));
+		
 		BoardDTO dto = new BoardDTO();
+		
 		dto.setBno(bno);
+		dto.setM_id((String) session.getAttribute("mid"));
 		// dto.setBwrite(null) 사용자정보
 		// 추후 로그인을 하면 사용자의 정보도 담아서 보냅니다.
 		
-		boardService.delete(dto);
-		
+		if(session.getAttribute("mid") == dto.getM_id()) {
+			boardService.delete(dto);
+		}
 		return "redirect:board";	// 삭제를 완료한 후에 다시 보드로 갑니다.
-	}
+	} 
 	
 	// 수정하기, 로그인하기 만들자
 	@GetMapping("/edit")
 	public ModelAndView edit(HttpServletRequest request) {
 		
+		// 로그인 하지 않으면 로그인 화면으로 던져주세요.
 		HttpSession session = request.getSession();
+		ModelAndView mv = new ModelAndView();	// jsp 값을 비웁니다.
 		
-		ModelAndView mv = new ModelAndView("edit"); // edit.jsp
-		
-		// dto를 하나 만들어서 거기에 담겠습니다. = bno, mid
-		BoardDTO dto = new BoardDTO();
-		dto.setBno(util.strToInt(request.getParameter("bno")));
-		
-		// 내글만 수정할 수 있도록 세션에 있는 mid도 보냅니다.
-		dto.setM_id((String)session.getAttribute("mid"));
-		
-		// 데이터베이스에 bno를 보내서 dto를 얻어옵니다.
-		BoardDTO result = boardService.detail(dto);
-		
-		// mv에 실어보냅니다.
-		mv.addObject("dto", result);
+		// if문으로 만들어주세요.
+		if(session.getAttribute("mid") != null) {
+			
+			// dto를 하나 만들어서 거기에 담겠습니다. = bno, mid
+			BoardDTO dto = new BoardDTO();
+			dto.setBno(util.strToInt(request.getParameter("bno")));
+			
+			// 내글만 수정할 수 있도록 세션에 있는 mid도 보냅니다.
+			dto.setM_id((String)session.getAttribute("mid"));
+			
+			// 데이터베이스에 bno를 보내서 dto를 얻어옵니다.
+			BoardDTO result = boardService.detail(dto);
+			System.out.println("result : " + result);
+			if(result != null) { // 내 글을 수정했습니다.
+				mv.addObject("dto", result); // mv에 실어보냅니다.
+				mv.setViewName("edit");	// 이동할 jsp명을 적어줍니다.
+			} else { // 다른 사람 글이라면 null입니다. 경고창으로 이동합니다.
+				mv.setViewName("warning");	
+			}
+	 
+		} else {
+			// 로그인 안 했다. = login 컨트롤러
+			mv.setViewName("redirect:/login");
+		}
 		return mv;
 	}
 	

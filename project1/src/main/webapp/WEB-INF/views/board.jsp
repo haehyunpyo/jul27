@@ -21,7 +21,7 @@
 					<th>제목</th>
 					<th>글쓴이</th>
 					<th>날짜</th>
-					<th>좋아요</th>
+					<th>조회수</th>
 				</tr>
 				
 				<c:forEach items="${list }" var="row">

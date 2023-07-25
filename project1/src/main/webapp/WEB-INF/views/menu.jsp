@@ -16,15 +16,14 @@
 			<li onclick="link('notice')">
 				<img class="nimg" src="./img/notice.png">공지</li>
 			
-						
 			<c:choose>
 				<c:when test="${sessionScope.mname eq null}">
 					<li onclick="link('login')">로그인
 						<img class="limg" src="./img/login.png"></li>
 				</c:when>
 				<c:otherwise>
-					<li>${sessionScope.mname } & ${sessionScope.mid } 님 반갑습니다.</li>
-					<li onclick="link('logout')">로그아웃</li>
+					<li class="greet">${sessionScope.mname } & ${sessionScope.mid } 님 반갑습니다.</li>
+					<li class="logout" onclick="link('logout')">로그아웃</li>
 				</c:otherwise>
 			</c:choose>
 			

@@ -6,8 +6,6 @@ body {
 }
 
 nav {
-	/* 		position: fixed;
- */
 	top: 0;
 	width: 100%;
 	height: 50px;
@@ -23,7 +21,7 @@ nav ul {
 nav li {
 	list-style: none; /* li앞에 원을 없애줍니다. */
 	float: left;
-	width: 150px;
+	width: 100px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
@@ -45,3 +43,10 @@ nav li:hover {
 	margin: 0 5px 0 5px;
 }
 
+.greet{
+	width: 10em;
+}
+
+.logout{
+	float: right;	
+}

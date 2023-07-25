@@ -27,24 +27,30 @@ public class BoardService {
 	}
 
 	public BoardDTO detail(BoardDTO dto2) {
+		// 좋아요수 +1하기 기능을 넣어주겠습니다.
+		boardDAO.likeUp(dto2);
+	
 		BoardDTO dto = boardDAO.detail(dto2);
-
-		// 검사 : .이 없거나, null이면 실행하지 않게 해주세요.
-		if(dto.getBip() != null && dto.getBip().indexOf(".") != -1) {
-			// 여기서 ip뽑아올 수 있죠?
-			String ip = dto.getBip();
-			// ip 중간에 하트 넣을 수 있죠?
-			String[] arr =ip.split("[.]");
-			String str = arr[1];
-			str = str.replace(arr[1], "**"); 
-			arr[1] = str;
-			str = String.join(".", arr);
-			
-			// 그거 다시 ip에 저장할 수 있죠?
-			dto.setBip(str);
-			// 끝
-		}
-		
+		// System.out.println(dto);
+		// System.out.println(dto.getBno());
+		// System.out.println(dto.getBip());
+		if(dto != null) {	// 내 글이 아닐때는 null들어옵니다. 즉, null이 아닐떄라고 검사해주세요.
+			// 검사 : .이 없거나, null이면 실행하지 않게 해주세요.
+			if(dto.getBip() != null && dto.getBip().indexOf(".") != -1) {
+				// 여기서 ip뽑아올 수 있죠?
+				String ip = dto.getBip();
+				// ip 중간에 하트 넣을 수 있죠?
+				String[] arr =ip.split("[.]");
+				String str = arr[1];
+				str = str.replace(arr[1], "**"); 
+				arr[1] = str;
+				str = String.join(".", arr);
+				
+				// 그거 다시 ip에 저장할 수 있죠?
+				dto.setBip(str);
+				// 끝
+			}
+		} 
 		return dto;
 	}
 
