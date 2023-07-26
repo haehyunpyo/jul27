@@ -3,18 +3,20 @@
 table{
 	margin: 0 auto;
 	width: 800px;
-	height: 500px;
+	height: auto;
 	border-collapse: collapse;
 }
 
 th{
 	height: 50px;
 	background-color: #FFDAB9;
+	height: 40px;
 }
 
 td{
 	text-align: center;
 	border-bottom: 1px solid gray;
+	height: 40px;
 }
 
 .td1{
@@ -57,5 +59,25 @@ h1{
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.page{
+	margin: 15px;
+	text-align: center;
+}
+
+.page a{
+	margin: 10px;
+	text-decoration: none;
+	color: black;
+}
+strong {
+	margin: 10px;
+}
+.page img{
+	width: 15px;
+	height: 15px;
+	vertical-align: bottom;
+}
+
 
 

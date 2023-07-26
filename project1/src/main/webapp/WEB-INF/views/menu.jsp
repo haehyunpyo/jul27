@@ -12,18 +12,20 @@
 			<li onclick="link('board2')">
 				<img class="bimg" src="./img/board.png">게시판2</li>
 			<li onclick="link('mooni')">
-				<img class="qimg" src="./img/ask.png">문의사항<img class="qimg" src="./img/ask.png"></li>
+				<img class="qimg" src="./img/ask.png">문의사항</li>
 			<li onclick="link('notice')">
 				<img class="nimg" src="./img/notice.png">공지</li>
 			
 			<c:choose>
 				<c:when test="${sessionScope.mname eq null}">
-					<li onclick="link('login')">로그인
-						<img class="limg" src="./img/login.png"></li>
+					<li class="login" onclick="link('login')">
+						<img class="limg" src="./img/lock.png"></li>
 				</c:when>
 				<c:otherwise>
 					<li class="greet">${sessionScope.mname } & ${sessionScope.mid } 님 반갑습니다.</li>
-					<li class="logout" onclick="link('logout')">로그아웃</li>
+					<li class="logout" onclick="link('logout')">
+						<img class="limg" src="./img/unlock.png"></li>
+					</li>
 				</c:otherwise>
 			</c:choose>
 			

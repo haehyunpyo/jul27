@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.phyho.pro1.BoardDTO" alias="boardDTO"/>
 		<typeAlias type="com.phyho.pro1.LoginDTO" alias="loginDTO"/>
+		<typeAlias type="com.phyho.pro1.PageDTO" alias="pageDTO"/>
 		
 	</typeAliases>
 </configuration>
