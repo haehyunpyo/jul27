@@ -1,13 +1,15 @@
-package com.phyho.pro1;
+package com.phyho.DAO;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import com.phyho.DTO.BoardDTO;
+import com.phyho.DTO.PageDTO;
 
 // Inject 사용해보기
 

@@ -1,4 +1,4 @@
-package com.phyho.pro1;
+package com.phyho.util;
 
 import java.util.Iterator;
 

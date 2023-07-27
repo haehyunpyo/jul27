@@ -61,6 +61,13 @@ function check(){
 			<span id="msg"></span>
 		</form>
 		
+		<div>
+			<a>아이디 찾기</a> 
+			<a>비밀번호 찾기</a>
+		</div>
+		<div class="joinBox">
+			<a href="./join" class="join">회원가입</a>
+		</div>
 	</div>
 	
 </body>

@@ -1,4 +1,4 @@
-package com.phyho.pro1;
+package com.phyho.DTO;
 // 롬복
 public class PageDTO {
 	private int firstRecordIndex, recordCountPerPage;

@@ -1,7 +1,7 @@
-package com.phyho.pro1;
+package com.phyho.controller;
 
 import java.util.List;
-import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.phyho.DTO.BoardDTO;
+import com.phyho.DTO.PageDTO;
+import com.phyho.service.BoardService;
+import com.phyho.util.Util;
 
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
@@ -108,6 +113,12 @@ public class BoardController {
 			
 			dto.setM_id((String)session.getAttribute("mid"));
 			dto.setM_name((String)session.getAttribute("mname")); // 세션에서 가져옴
+			
+			dto.setUuid(UUID.randomUUID().toString());
+			System.out.println("=====================");
+			System.out.println(UUID.randomUUID().toString());
+			System.out.println(UUID.randomUUID().toString().length());
+			System.out.println("=====================");
 			
 			// Service -> DAO -> mybatis -> DB로 보내서 저장하기
 			boardService.write(dto);

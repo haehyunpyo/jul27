@@ -22,3 +22,12 @@
 h1{
 	text-align: center;
 }
+
+.joinBox{
+	text-align: center;
+	margin: 10px;
+}
+.join{
+	text-decoration: none;
+	padding: 10px;
+}

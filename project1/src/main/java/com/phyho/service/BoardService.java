@@ -1,15 +1,17 @@
-package com.phyho.pro1;
+package com.phyho.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.phyho.DAO.BoardDAO;
+import com.phyho.DTO.BoardDTO;
+import com.phyho.DTO.PageDTO;
+import com.phyho.util.Util;
 
 @Service("boardService")
 public class BoardService {
