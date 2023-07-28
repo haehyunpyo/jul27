@@ -7,6 +7,9 @@
 <title>글쓰기 Get</title>
 
 <link rel="stylesheet" href="./css/write.css">
+<link rel="shortcut icon" href="./image/favicon2.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 <!-- include libraries(jQuery, bootstrap) -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

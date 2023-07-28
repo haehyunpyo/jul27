@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body{
+	margin: 0;
+	align-items: stretch;
+}
+
 table{
 	margin: 0 auto;
 	margin-bottom: 30px;
@@ -52,14 +57,13 @@ h1{
     height: 40px;
     background-color: #FFDAB9;
     transition-duration: 0.4s;
-    font: b
 }
 
 .btn:hover {
-  background-color: salmon;
-  color: white;
-  box-shadow: 10px 10px 10px rgb(254, 187, 42);
-  transform: translateY(-0.2em);
+	background-color: salmon;
+	color: white;
+	box-shadow: 10px 10px 10px rgb(254, 187, 42);
+	transform: translateY(-0.2em);
 }
 
 .page{

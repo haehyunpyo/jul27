@@ -3,6 +3,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	align-items: stretch;
 }
 
 nav {
@@ -11,6 +12,7 @@ nav {
 	height: 50px;
 	background-color: #FFDAB9;
 	border-bottom: 1px solid #D2691E;
+	align-items: stretch;
 }
 
 nav ul {

@@ -2,6 +2,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
    
 <link rel="stylesheet" href="./css/menu.css">
+<link rel="shortcut icon" href="./image/favicon2.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 	<nav>
 		<ul>
@@ -15,6 +17,7 @@
 				<img class="qimg" src="./img/ask.png">문의사항</li>
 			<li onclick="link('notice')">
 				<img class="nimg" src="./img/notice.png">공지</li>
+			<li onclick="link('members')">회원리스트</li>
 			
 			<c:choose>
 				<c:when test="${sessionScope.mname eq null}">

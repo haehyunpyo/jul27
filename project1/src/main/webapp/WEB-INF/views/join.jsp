@@ -6,63 +6,83 @@
 <meta charset="UTF-8">
 <title>JOIN</title>
 <link rel="stylesheet" href="./css/join.css">
+<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <%@ include file = "menu.jsp" %>
-	<h1>회원가입</h1>
+
+	<form action="./join" method="post" >
+		<div class="joinBox">
 	
-	<div class="joinBox">
-		<form action="./join" method="post" onsubmit="return check()">
+
+		<h1>회원가입</h1>
 		
-			<div class = "IDbox">
-				<div>아이디</div> 
-				<input type="text" name="id" placeholder="사용하실 아이디를 입력하세요" 
-					required="required" maxlength="10" onchange="checkID()"> 
+			<div class="idBox">
+				<input type="text" name="id" id="id" placeholder="아이디" > 
 			</div>
-			<div class = "PWbox">
-				<div>비밀번호</div>  
-				<input type="text" name="pw1" placeholder="사용하실 패스워드를 입력하세요" 
-					required="required" maxlength="15"><br>
-				<div>비밀번호 확인</div> 
-				<input type="text" name="pw2" placeholder="패스워드 확인" 
-					required="required" maxlength="15">
+			<div class="pwBox1">
+				<input type="text" name="pw1" id="pw1" placeholder="비밀번호" >
 			</div>
-			<div>이름 <input type="text" name="name" required="required"> </div>
-			<div>주소 <input type="text" name="addr" ></div>
-			<div>MBTI <input type="text" name="mbti" required="required"></div>
-			<div>생년월일 <input type="text" name="birth" ></div>
-			<div>
-				<select id="select_value">
-					<option>ESTP</option>
-					<option>ESTJ</option>
-					<option>ESFP</option>
-					<option>ESFJ</option>
-					<option>ENFP</option>
-					<option>ENFJ</option>
-					<option>ENTP</option>
-					<option>ENTJ</option>
-					<option>ISTP</option>
-					<option>ISTJ</option>
-					<option>ISFP</option>
-					<option>ISFJ</option>
-					<option>INFP</option>
-					<option>INFJ</option>
-					<option>INTP</option>
-					<option>INTJ</option>
+			<div class="pwBox2">
+				<input type="text" name="pw1" id="pw2" placeholder="비밀번호확인" >
+			</div>
+			<div class="nameBox">
+			<input type="text" name="name" id="name" placeholder="이름" >
+			</div>
+			<div class="addrBox">
+			<input type="text" name="addr" id="addr" placeholder="주소" >
+			</div>
+			
+			<div class="selectBox"> 
+				<div class="selectText">성별</div>
+				<label for="male">남자</label>
+	    		<input type="radio" name="gender" id="male" value="1" />
+	    		<label for="female">여자</label>
+	    		<input type="radio" name="gender" id="female" value="0"/>
+			</div>
+			
+			<div class="birthBox"> 
+				<div class="birthText">생년월일</div>
+				<input type="date" name="birth" id="birth">
+			</div>
+			
+			<div class="mbtiBox">
+				<div class="mbtiText">MBTI</div>
+				<select name="mbti" id="mbti">
+					<option>선택</option>
+					<optgroup label="대문자 E">
+						<option value="ESTP">ESTP</option>
+						<option value="ESTJ">ESTJ</option>
+						<option value="ESFP">ESFP</option>
+						<option value="ESFJ">ESFJ</option>
+						<option value="ENFP">ENFP</option>
+						<option value="ENFJ">ENFJ</option>
+						<option value="ENTP">ENTP</option>
+						<option value="ENTJ">ENTJ</option>
+					</optgroup>
+					<optgroup label="대문자 I">
+						<option value="ISTJ">ISTJ</option>
+						<option value="ISTP">ISTP</option>
+						<option value="ISFJ">ISFJ</option>
+						<option value="ISFP">ISFP</option>
+						<option value="INTJ">INTJ</option>
+						<option value="INTP">INTP</option>
+						<option value="INFJ">INFJ</option>
+						<option value="INFP">INFP</option>
+					</optgroup>
 				</select>
 			</div>
-			<div>성별</div>
-			<div>
-				<label for="male">남자</label>
-	    		<input type="radio" id="mail" checked/>
-	    		<label for="female">여자</label>
-	    		<input type="radio" id="female" />
+			
+			<div class="btnBox1">
+				<button type="submit" class="Jbtn">가입하기</button>
 			</div>
-			<div class="Jbtn"><button type="">가입하기</button></div> 
-			<div class="Cbtn"><button type="">취소</button></div>
+			<div class="btnBox2">
+				<button type="reset" class="Cbtn">취소</button>
+			</div>
 		
-		</form>
-	</div>
+		</div>
+	</form>
 
 </body>
 </html>

@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>login</title>
 <link rel="stylesheet" href="./css/login.css">
+<link rel="shortcut icon" href="./image/favicon2.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <script type="text/javascript">
 
 //스크립트 영역
@@ -61,8 +63,8 @@ function check(){
 			<span id="msg"></span>
 		</form>
 		
-		<div>
-			<a>아이디 찾기</a> 
+		<div class="IDPWbox">
+			<a>아이디 찾기</a> |
 			<a>비밀번호 찾기</a>
 		</div>
 		<div class="joinBox">

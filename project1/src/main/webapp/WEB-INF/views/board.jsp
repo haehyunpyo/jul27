@@ -9,6 +9,8 @@
 <meta charset="UTF-8">
 <title>PYO'S</title>
 <link rel="stylesheet" href="./css/board.css">
+<link rel="shortcut icon" href="./image/favicon2.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <script type="text/javascript">
 	function linkPage(pageNo){
