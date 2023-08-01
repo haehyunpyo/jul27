@@ -45,12 +45,13 @@
 <body>
 <%@ include file = "menu.jsp" %>
 	<h1>글쓰기</h1>
+	<button class="btn btn-outline-succes">버튼</button>
 	<div class="write-div">
 		<form action="./write" method="post" onsubmit="return check()">
 			<input type="text" name="title" id="title">
 			<textarea id="summernote" name="content"></textarea>
 			<div class="btn2Box"> 
-				<button class="btn2" name="btn2" type="submit">글쓰기</button>
+				<button class="btn2 btn btn-primary" name="btn2" type="submit">글쓰기</button>
 			</div>
 		</form>
 		<!-- 	type="submit" => 제출버튼, 폼데이터로 데이터 전송-->

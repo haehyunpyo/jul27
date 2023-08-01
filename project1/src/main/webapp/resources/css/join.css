@@ -109,3 +109,12 @@ input {
 	transform: translateY(-0.2em);
 }
 
+#idCheck{
+	width: 50px;
+	float: right;
+}
+#resultMSG{
+	width: 500px; 
+	height: 20px;
+	border
+}

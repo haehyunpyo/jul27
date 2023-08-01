@@ -5,9 +5,44 @@
 <head>
 <meta charset="UTF-8">
 <title>JOIN</title>
-<link rel="stylesheet" href="./css/join.css">
+<link rel="stylesheet" href="./css/join.css?version=0.2">
 <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<script src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#idCheck").click(function () {
+			let id = $("#id").val();
+			if(id == "" || id.length < 5) {
+				// alert("아이디는 5글자 이상이어야 합니다.");
+				$("#resultMSG").text("아이디는 5글자 이상이어야 합니다.");
+				$("#resultMSG").css("color", "red");
+				$("#id").focus();
+				return false;
+			} else {
+				$.ajax({
+					url:"./checkID",
+					type: "post",
+					data: {"id": id}, // checkID?id = poseidon
+					dataType: "html", 
+					success: function (data){
+						$("#resultMSG").text("data : " + data);
+					},
+					error: function(request, status, error){
+						$("#resultMSG").text("error : " + error);
+					}
+				});
+				
+				
+				$("#resultMSG").text("5글자 이상으로 들어왔습니다.");
+				$("#resultMSG").css("color", "green");
+			}
+			return false;
+		});
+	});
+
+</script>
+
 </head>
 <body>
 <%@ include file = "menu.jsp" %>
@@ -20,7 +55,10 @@
 		
 			<div class="idBox">
 				<input type="text" name="id" id="id" placeholder="아이디" > 
+				<button id="idCheck">중복검사</button><br>
+				<div id="resultMSG"></div>
 			</div>
+			
 			<div class="pwBox1">
 				<input type="text" name="pw1" id="pw1" placeholder="비밀번호" >
 			</div>
