@@ -10,34 +10,38 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <script src="./js/jquery-3.7.0.min.js"></script>
 <script type="text/javascript">
+
 	$(function () {
-		$("#idCheck").click(function () {
+		$("#idCheck").click(function() {
 			let id = $("#id").val();
-			if(id == "" || id.length < 5) {
-				// alert("아이디는 5글자 이상이어야 합니다.");
-				$("#resultMSG").text("아이디는 5글자 이상이어야 합니다.");
-				$("#resultMSG").css("color", "red");
-				$("#id").focus();
-				return false;
+			//console.log(id);
+			//console.log(id.length);
+			if(id=="" || id.length < 5){
+				$("#resultMSG").text("아이디는 다섯글자 이상이어야 합니다.");
+				$("#resultMSG").css("color", "red").css("font-weight", "bold").css("font-size", "10pt");
 			} else {
-				$.ajax({
-					url:"./checkID",
-					type: "post",
-					data: {"id": id}, // checkID?id = poseidon
-					dataType: "html", 
-					success: function (data){
-						$("#resultMSG").text("data : " + data);
+				$.ajax({ // ajax 시작
+					url : "./checkID",
+					type : "post",
+					data : {"id": id},
+					dataType : "json", // {result : 0}
+					success : function(data){
+						// alert(data.result);
+						if(data.result == 1){
+							$("#id").css("background-color", "red").focus();
+							$("#resultMSG").css("color", "red").text("이미 등록된 아이디입니다.");
+						} else {
+							$("#id").css("background-color", "white");
+							$("#resultMSG").css("color", "green").text("가입할 수 있습니다.");
+						}
+						//$("#resultMSG").text("성공시 결과값 : " + data);
 					},
-					error: function(request, status, error){
-						$("#resultMSG").text("error : " + error);
+					error : function(request, status, error){
+						$("#resultMSG").text("오류가 발생했습니다. 가입할 수 없습니다. ");
 					}
-				});
-				
-				
-				$("#resultMSG").text("5글자 이상으로 들어왔습니다.");
-				$("#resultMSG").css("color", "green");
+				});	// ajax 끝
 			}
-			return false;
+			return false;	// 멈추기
 		});
 	});
 
@@ -55,9 +59,9 @@
 		
 			<div class="idBox">
 				<input type="text" name="id" id="id" placeholder="아이디" > 
-				<button id="idCheck">중복검사</button><br>
-				<div id="resultMSG"></div>
+				<button id="idCheck">중복검사</button>
 			</div>
+			<span id="resultMSG">중복검사메세지</span>
 			
 			<div class="pwBox1">
 				<input type="text" name="pw1" id="pw1" placeholder="비밀번호" >

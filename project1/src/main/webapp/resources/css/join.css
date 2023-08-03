@@ -20,7 +20,17 @@ input {
 	
 }
 
-.idBox, .pwBox1, .pwBox2, .nameBox, .addrBox {
+.idBox{
+	border-bottom: 2px solid #adadad;
+	margin: 30px 30px 10px 30px;
+  	padding: 10px 10px;
+} 
+.pwBox1 {
+	border-bottom: 2px solid #adadad;
+	margin: 10px 30px 30px 30px;
+  	padding: 10px 10px;
+}
+.pwBox2, .nameBox, .addrBox, .MSGBos {
 	border-bottom: 2px solid #adadad;
   	margin: 30px;
   	padding: 10px 10px;
@@ -32,8 +42,16 @@ input {
   	width: 50%px;
 }
 
+#id {
+	border:none;
+  	outline:none;
+  	width: 80%;
+  	height: 25px;
+  	font-size:16px;
+}
 
-#id, #pw1, #pw2, #name, #addr {
+
+#pw1, #pw2, #name, #addr {
 	border:none;
   	outline:none;
   	width: 100%;
@@ -78,7 +96,6 @@ input {
 	float: right;
 }
 
-
 .Jbtn {
 	border-radius: 30px;
 	border: 1px solid white;
@@ -110,11 +127,14 @@ input {
 }
 
 #idCheck{
-	width: 50px;
+	border-radius: 10px;
+	border: 1px solid white;
+	width: 80px;
+	height: 40px;
 	float: right;
+	transform: translateY(-0.5em);
 }
 #resultMSG{
-	width: 500px; 
-	height: 20px;
-	border
+    font-size: small;
 }
+
