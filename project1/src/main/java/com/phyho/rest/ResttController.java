@@ -41,7 +41,7 @@ public class ResttController {
 		
 		List<Map<String, Object>> list = loginService.boardList2((pageNo - 1) * 10);
 		
-		//System.out.println(list);
+		System.out.println(list);
 		JSONObject json = new JSONObject();
 		JSONArray arr = new JSONArray(list);
 		json.put("totalCount", loginService.totalCount());

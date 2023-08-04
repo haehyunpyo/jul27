@@ -95,6 +95,10 @@ strong {
 	height: 15px;
 	vertical-align: bottom;
 }
-
-
+small{
+	color: #FFDAB9;
+	font-weight: bold;
+	width: 50px;
+	height: 50px;
+}
 

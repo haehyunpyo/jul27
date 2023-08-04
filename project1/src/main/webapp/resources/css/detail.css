@@ -26,11 +26,8 @@ body{
 }
 .under-bar{
 	width: 100%;
-	border: 1px solid #D7A35D;
-	background-color: #FFEFD5;
-	height: 80px;
+	height: 40px;
 	padding: 20px;
-	border-radius: 20px;
 	box-sizing: border-box;
 }
 .name, .like{
@@ -64,4 +61,46 @@ body{
 .upNde{
 	margin: 0 auto;
 	float: right;
+}
+.cBox{
+	width: 100%;
+	background-color: #FFEFD5;
+	height: 80px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+.cName{
+	margin: auto;
+	background-color: #FFDAB9;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	width: 100%;
+	height: 50%;
+	
+}
+.cComment{
+	width: 100%;
+}
+.cDate{
+	text-align: right;
+}
+.commentBox{
+	width: 100%;
+	height: 300px;
+	padding: 10px;
+	text-align: center;	
+}
+.commenttextarea{
+	width: cal(100%-50px);
+	height: 100%;
+	padding: 20px;
+}
+#comment{
+	width: 70px;
+	height: 100%;
+	text-align: center;
+}
+.cOpenBtn{
+	text-align: center;
 }
