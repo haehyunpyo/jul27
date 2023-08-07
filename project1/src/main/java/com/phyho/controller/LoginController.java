@@ -66,7 +66,8 @@ public class LoginController {
 //		if(session.getAttribute("mid") != null) {
 //			session.removeAttribute("mid");
 //		}
-//		session.setMaxInactiveInterval(0);
+		
+		session.setMaxInactiveInterval(0);
 		
 		session.invalidate(); // 세션삭제하기
 
@@ -76,6 +77,12 @@ public class LoginController {
 	@GetMapping("/join")
 	public String join() {
 		return "join";
+	}
+	
+	//자바스크립트로 만든것.
+	@GetMapping("/join2")
+	public String join2() {
+		return "join2";
 	}
 	
 	@PostMapping("/join")

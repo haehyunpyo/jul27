@@ -3,6 +3,8 @@ package com.phyho.rest;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.phyho.service.BoardService;
 import com.phyho.service.LoginService;
+import com.phyho.util.Util;
 
 @RestController
 public class ResttController {
+	
 	@Autowired
 	private LoginService loginService;
+	
+	@Autowired
+	private BoardService boardService;
+	
+	@Autowired
+	private Util util;
+
 	
 	// 아이디 중복검사 2023-08-02
 	@PostMapping("/checkID")
@@ -33,6 +44,14 @@ public class ResttController {
 		
 		return json.toString(); // {"result": 1}
 	}
+	
+	//자바스크립트로 만든 것.
+	@PostMapping("/checkID2")
+	public String checkID2(@RequestParam("id") String id) {
+		int result = loginService.checkID(id);
+		return result+"";
+	}
+	
 	
 	// boardList2
 	@GetMapping(value = "/boardList2", produces = "application/json; charset = UTF-8")
@@ -53,5 +72,26 @@ public class ResttController {
 	
 	}
 	
+	
+	@PostMapping("/cdelR")
+	public String cdelR(@RequestParam Map<String, Object> map, HttpSession session) {
+		
+		JSONObject json = new JSONObject();
+		int result=0;
+		
+		if(session.getAttribute("mid") != null){	
+			if(map.containsKey("bno") && map.get("cno") !=null &&
+				!(map.get("bno").equals("")) && !(map.get("cno").equals("")) && 
+				util.isNum(map.get("bno")) && util.isNum(map.get("cno"))) {
+				
+				System.out.println(map);
+				
+				map.put("mid", session.getAttribute("mid"));
+				result = boardService.cdel(map);
+				//System.out.println("삭제 결과 : " + result);
+			}
+			json.put("result", result);
+		}
+		return json.toString() +"";
+	}
 }
-
