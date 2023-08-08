@@ -62,14 +62,7 @@ body{
 	margin: 0 auto;
 	float: right;
 }
-.cBox{
-	width: 100%;
-	background-color: #FFEFD5;
-	height: 80px;
-	margin-bottom: 20px;
-	border-radius: 20px;
-	box-sizing: border-box;
-}
+
 .cName{
 	margin: auto;
 	background-color: #FFDAB9;
@@ -77,30 +70,39 @@ body{
 	border-top-right-radius:20px;
 	width: 100%;
 	height: 50%;
-	
 }
+
 .cComment{
 	width: 100%;
+	height: 80px;
+	background-color: #FFEFD5;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	box-sizing: border-box;
 }
-.cDate{
-	text-align: right;
+.cid{
+	float: right;
 }
-.commentBox{
+.commentBox, .recommentBox{
 	width: 100%;
 	height: 300px;
 	padding: 10px;
+	margin: 10px;
 	text-align: center;	
 }
-.commenttextarea{
-	width: cal(100%-50px);
-	height: 100%;
+#commenttextarea, #rcta{
+	width: 65%;
+	height: 50%;
 	padding: 20px;
+	box-sizing:border-box;
 }
-#comment{
-	width: 70px;
-	height: 100%;
-	text-align: center;
+#comment, #recomment, #openComment{
+	width: 80px;
+	height: 50px;
+	margin: 10px;
+	border-radius: 15%;
 }
 .cOpenBtn{
 	text-align: center;
 }
+

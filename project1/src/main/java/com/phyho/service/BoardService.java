@@ -98,6 +98,10 @@ public class BoardService {
 	public int cdel(Map<String, Object> map) {
 		return boardDAO.cdel(map);
 	}
+
+	public int cedit(Map<String, Object> map) {
+		return boardDAO.cedit(map);
+	}
 	
 	
 }
